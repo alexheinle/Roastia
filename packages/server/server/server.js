@@ -49,12 +49,12 @@ app.use(
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'packages', 'client', 'build', 'index.html'));
   })
 } else {
   app.use(express.static(path.join(__dirname, '../client/public')));
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'pubilc', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'packages', 'client', 'public', 'index.html'));
   })
 }
 
